@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MGL Soluções Digitais — Mais visibilidade, mais buscas, mais vendas</title>
+<meta name="description" content="Posicionamento digital e tráfego pago: social media, conteúdo, gravações, sites e Google Business Profile para negócios que querem ser encontrados e lembrados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050C16;
+  --navy:#0A1B33;
+  --navy-2:#0E2547;
+  --blue:#2B7FFF;
+  --signal:#7FD8FF;
+  --steel:#8496AC;
+  --paper:#EDF3FA;
+  --line:rgba(132,150,172,.22);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- marca ---------- */
+.mark{display:inline-flex;align-items:center;gap:.12em;font-family:var(--display);
+  font-weight:800;letter-spacing:-.055em;line-height:1;color:var(--paper)}
+.mark svg{width:.62em;height:.62em;margin-bottom:.34em;overflow:visible}
+.mark svg path{stroke:var(--blue);stroke-width:2.6;fill:none;stroke-linecap:round}
+
+/* ---------- nav ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .35s,border-color .35s,backdrop-filter .35s;
+  border-bottom:1px solid transparent}
+header.stuck{background:rgba(5,12,22,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav .mark{font-size:30px}
+.nav nav{display:flex;align-items:center;gap:30px}
+.nav nav a{font-size:14.5px;color:var(--steel);transition:color .2s}
+.nav nav a:hover{color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:600;
+  font-size:15px;padding:13px 22px;border-radius:100px;border:1px solid transparent;cursor:pointer;
+  transition:transform .2s,box-shadow .25s,background .25s,border-color .25s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 26px rgba(43,127,255,.34)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(43,127,255,.5)}
+.btn-ghost{border-color:var(--line);color:var(--paper)}
+.btn-ghost:hover{border-color:var(--blue);background:rgba(43,127,255,.09)}
+.btn-sm{padding:10px 18px;font-size:14px}
+@media(max-width:900px){.nav nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:900px;height:900px;left:50%;top:-420px;
+  transform:translateX(-30%);border-radius:50%;
+  background:radial-gradient(circle,rgba(43,127,255,.20),transparent 62%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:26px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--signal);opacity:.7}
+h1{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:.98;
+  font-size:clamp(40px,5.6vw,70px);margin:0 0 24px}
+h1 em{font-style:normal;color:var(--blue)}
+.lead{font-size:19px;color:#B9C7D6;max-width:37ch;margin:0 0 34px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.slogan{margin-top:30px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--steel)}
+
+/* ---------- radar ---------- */
+.radar{position:relative;aspect-ratio:1/1;max-width:480px;width:100%;margin-inline:auto}
+.radar>svg{position:absolute;inset:0;width:100%;height:100%}
+.ring{fill:none;stroke:var(--blue);stroke-width:1.1;transform-origin:50% 50%;
+  animation:pulse 4.6s cubic-bezier(.22,.7,.3,1) infinite;opacity:0}
+.ring:nth-child(2){animation-delay:1.15s}
+.ring:nth-child(3){animation-delay:2.3s}
+.ring:nth-child(4){animation-delay:3.45s}
+@keyframes pulse{
+  0%{transform:scale(.16);opacity:0}
+  14%{opacity:.85}
+  100%{transform:scale(1);opacity:0}
+}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--navy-2),var(--navy));border:1px solid rgba(127,216,255,.3);
+  box-shadow:0 0 60px rgba(43,127,255,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+.core .mark{font-size:34px}
+.core .mark svg{position:static;inset:auto;width:.62em;height:.62em}
+.chip{position:absolute;font-family:var(--mono);font-size:12px;white-space:nowrap;
+  padding:8px 13px;border-radius:100px;color:#CBD9E8;
+  background:rgba(14,37,71,.78);border:1px solid var(--line);backdrop-filter:blur(6px);
+  opacity:0;animation:chip 9s ease-in-out infinite}
+.chip::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--signal);margin-right:8px;vertical-align:middle}
+@keyframes chip{0%,72%,100%{opacity:0;transform:translateY(8px) scale(.96)}
+  10%,58%{opacity:1;transform:translateY(0) scale(1)}}
+.chip.c1{left:-4%;top:14%;animation-delay:.2s}
+.chip.c2{right:-6%;top:31%;animation-delay:1.6s}
+.chip.c3{left:2%;bottom:22%;animation-delay:3.2s}
+.chip.c4{right:0%;bottom:9%;animation-delay:4.8s}
+.searchbar{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);width:min(100%,400px);
+  display:flex;align-items:center;gap:11px;padding:14px 18px;border-radius:14px;
+  background:rgba(10,27,51,.92);border:1px solid var(--line);
+  box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.searchbar svg{position:static;width:17px;height:17px;flex:none;stroke:var(--steel);fill:none;stroke-width:2}
+#typed{font-family:var(--mono);font-size:13.5px;color:var(--paper);overflow:hidden;white-space:nowrap}
+#typed::after{content:"";display:inline-block;width:7px;height:15px;background:var(--blue);
+  vertical-align:-2px;margin-left:3px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+@media(max-width:900px){
+  .hero{padding:120px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .radar{max-width:360px}
+  .chip.c1{left:-8%}.chip.c2{right:-8%}
+}
+
+/* ---------- seções ---------- */
+section{position:relative}
+.sec-label{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--steel);margin-bottom:18px}
+h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1.02;
+  font-size:clamp(32px,4.2vw,50px);margin:0 0 18px}
+
+/* ---------- duas frentes ---------- */
+.fronts{padding:100px 0}
+.fronts-head{text-align:center;max-width:720px;margin:0 auto 34px}
+.fronts-head h2{margin-bottom:14px}
+.fronts-head .note{color:#9FB0C2;margin:0}
+.switch{position:relative;display:flex;gap:6px;padding:6px;margin:0 auto 38px;width:max-content;
+  max-width:100%;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.035)}
+.switch button{position:relative;z-index:2;border:0;background:none;cursor:pointer;color:var(--steel);
+  font-family:var(--body);font-weight:600;font-size:15.5px;padding:14px 28px;border-radius:100px;
+  display:flex;align-items:center;gap:10px;white-space:nowrap;transition:color .3s}
+.switch button .dot{width:9px;height:9px;border-radius:50%;flex:none;transition:background .3s,box-shadow .3s}
+.switch button:nth-child(1) .dot{background:var(--signal);box-shadow:0 0 10px rgba(127,216,255,.8)}
+.switch button:nth-child(2) .dot{background:var(--blue);box-shadow:0 0 10px rgba(43,127,255,.8)}
+.switch button[aria-selected="true"] .dot{background:currentColor;box-shadow:none}
+.switch button[aria-selected="true"]{color:#04101F}
+.switch[data-active="1"] button[aria-selected="true"]{color:#fff}
+.pill{position:absolute;left:0;top:6px;bottom:6px;border-radius:100px;background:var(--signal);
+  transition:transform .5s cubic-bezier(.22,.7,.25,1),width .5s cubic-bezier(.22,.7,.25,1),background .35s;z-index:1}
+.switch[data-active="1"] .pill{background:var(--blue)}
+
+.panel{display:none;--acc:var(--signal);--acc2:var(--blue);--ink:#04101F;--glow:rgba(127,216,255,.26)}
+.panel[data-front="pago"]{--acc:var(--blue);--acc2:var(--signal);--ink:#fff;--glow:rgba(43,127,255,.30)}
+.panel.on{display:block;animation:panelIn .55s cubic-bezier(.22,.7,.3,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.feature-card{position:relative;border-radius:28px;overflow:hidden;
+  background:linear-gradient(155deg,var(--navy-2) 0%,var(--navy) 48%,#071427 100%);
+  border:1px solid var(--line);padding:clamp(32px,5vw,64px)}
+.feature-card::after{content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;
+  border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 65%)}
+.feature-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.panel h2{font-size:clamp(34px,4.6vw,54px);margin-bottom:10px}
+.panel h2 em{display:block;font-style:normal;font-family:var(--body);font-weight:600;
+  font-size:clamp(16px,2vw,20px);letter-spacing:0;color:var(--acc);margin-top:10px}
+.panel p{color:#B9C7D6;max-width:46ch;margin:18px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 32px}
+.tag{font-size:13.5px;color:#CBD9E8;padding:8px 15px;border-radius:100px;
+  border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.panel .btn-primary{background:var(--acc);color:var(--ink);box-shadow:0 6px 26px var(--glow)}
+
+/* cenas animadas das frentes */
+.viz{display:flex;flex-direction:column;gap:26px}
+.scene{position:relative;height:244px;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);background:rgba(5,12,22,.55);padding:18px}
+.scene::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(420px circle at 70% 10%,var(--glow),transparent 70%);opacity:.5}
+
+/* --- cena 1: perfil se montando --- */
+.phone{position:absolute;left:18px;top:18px;width:150px;height:208px;border-radius:16px;
+  border:1px solid rgba(132,150,172,.3);padding:12px;
+  background:linear-gradient(160deg,rgba(14,37,71,.85),rgba(5,12,22,.6))}
+.ph-top{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.ava{width:28px;height:28px;border-radius:50%;background:var(--acc);flex:none;
+  animation:ring 3s ease-in-out infinite}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 var(--acc)}60%{box-shadow:0 0 0 9px rgba(0,0,0,0)}}
+.lns{display:flex;flex-direction:column;gap:5px}
+.lns i{display:block;height:6px;border-radius:3px;background:rgba(132,150,172,.45)}
+.lns i:first-child{width:52px}.lns i:last-child{width:30px;opacity:.6}
+.ph-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ph-grid span{aspect-ratio:1;border-radius:6px;opacity:0;
+  background:linear-gradient(140deg,var(--acc),rgba(43,127,255,.3));
+  animation:tile 6s ease-in-out infinite}
+.ph-grid span:nth-child(1){animation-delay:.1s}.ph-grid span:nth-child(2){animation-delay:.3s}
+.ph-grid span:nth-child(3){animation-delay:.5s}.ph-grid span:nth-child(4){animation-delay:.7s}
+.ph-grid span:nth-child(5){animation-delay:.9s}.ph-grid span:nth-child(6){animation-delay:1.1s}
+.ph-grid span:nth-child(7){animation-delay:1.3s}.ph-grid span:nth-child(8){animation-delay:1.5s}
+.ph-grid span:nth-child(9){animation-delay:1.7s}
+@keyframes tile{0%{opacity:0;transform:scale(.82)}7%{opacity:1;transform:none}
+  76%{opacity:1}86%{opacity:0;transform:scale(.9)}100%{opacity:0}}
+.chip-f{position:absolute;right:16px;padding:9px 14px;border-radius:100px;white-space:nowrap;
+  font-family:var(--mono);font-size:11.5px;color:#CBD9E8;opacity:0;
+  background:rgba(14,37,71,.92);border:1px solid var(--line);
+  animation:chipf 6s ease-in-out infinite}
+.chip-f::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--acc);margin-right:8px;vertical-align:middle}
+.chip-f.f1{top:34px;animation-delay:.5s}
+.chip-f.f2{top:102px;animation-delay:2.1s}
+.chip-f.f3{top:170px;animation-delay:3.5s}
+@keyframes chipf{0%{opacity:0;transform:translateX(16px)}7%{opacity:1;transform:none}
+  34%{opacity:1}42%{opacity:0;transform:translateX(-8px)}100%{opacity:0}}
+
+/* --- cena 2: anuncio virando conversa --- */
+.srch{display:flex;align-items:center;gap:11px;height:42px;border-radius:12px;padding:0 14px;
+  border:1px solid var(--line);background:rgba(10,27,51,.92);margin-bottom:16px}
+.mag{position:relative;width:13px;height:13px;border:2px solid var(--steel);border-radius:50%;flex:none}
+.mag::after{content:"";position:absolute;right:-6px;bottom:-4px;width:8px;height:2px;
+  background:var(--steel);transform:rotate(45deg)}
+.q{height:8px;border-radius:4px;background:rgba(237,243,250,.78);width:0;
+  animation:typing 6s ease-in-out infinite}
+@keyframes typing{0%{width:0}16%{width:58%}80%{width:58%}88%{width:0}100%{width:0}}
+.res{position:relative;border-radius:12px;padding:13px 15px;margin-bottom:11px;opacity:0;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+  animation:resin 6s ease-out infinite}
+.res i{display:block;height:7px;border-radius:4px;background:rgba(132,150,172,.45);margin:7px 0}
+.res.ad{border-color:var(--acc);background:rgba(43,127,255,.12);animation-delay:.35s}
+.res.org{animation-delay:1s}
+.res i:first-child{width:68%}.res i:last-child{width:42%}
+@keyframes resin{0%{opacity:0;transform:translateY(12px)}9%{opacity:1;transform:none}
+  84%{opacity:1}92%{opacity:0}100%{opacity:0}}
+.tagad{position:absolute;top:-10px;left:14px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;background:var(--acc);color:#fff;
+  padding:3px 9px;border-radius:100px}
+.cursor{position:absolute;left:56%;top:92px;width:17px;height:17px;border-radius:50%;
+  border:2px solid var(--paper);opacity:0;animation:cur 6s ease-in-out infinite}
+@keyframes cur{0%,26%{opacity:0;transform:translate(86px,78px) scale(1)}
+  33%{opacity:1;transform:translate(60px,54px) scale(1)}
+  46%{opacity:1;transform:translate(0,0) scale(1)}
+  51%{transform:translate(0,0) scale(.65)}
+  57%{transform:translate(0,0) scale(1)}
+  72%{opacity:1}80%{opacity:0}100%{opacity:0}}
+.msg{position:absolute;right:16px;bottom:16px;padding:10px 15px;font-size:12.5px;font-weight:600;
+  border-radius:14px 14px 4px 14px;background:var(--acc);color:#fff;opacity:0;
+  box-shadow:0 10px 26px rgba(0,0,0,.4);animation:msgin 6s ease-out infinite}
+@keyframes msgin{0%,56%{opacity:0;transform:translateY(10px) scale(.94)}
+  64%{opacity:1;transform:none}86%{opacity:1}94%{opacity:0}100%{opacity:0}}
+@media(max-width:480px){
+  .phone{width:128px;height:186px}.scene{height:222px}
+  .chip-f{font-size:10.5px;padding:7px 11px;right:12px}
+  .chip-f.f1{top:26px}.chip-f.f2{top:88px}.chip-f.f3{top:150px}
+}
+
+/* graficos das frentes */
+.chart{display:flex;flex-direction:column;gap:22px}
+.stage b{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--steel);font-weight:400}
+.stage .lbl{display:flex;align-items:baseline;gap:12px;margin-bottom:9px;flex-wrap:wrap}
+.stage .lbl span{font-size:15.5px;font-weight:600;color:var(--paper);line-height:1.25}
+.chart .stage:last-child .lbl span{color:var(--acc)}
+.bar{height:30px;border-radius:8px;width:0;
+  background:linear-gradient(90deg,var(--acc),var(--acc2));
+  transition:width 1.1s cubic-bezier(.22,.7,.25,1)}
+.stage:nth-child(2) .bar{transition-delay:.13s}
+.stage:nth-child(3) .bar{transition-delay:.26s}
+.stage:nth-child(4) .bar{transition-delay:.39s}
+.ladder.in .stage:nth-child(1) .bar{width:34%}
+.ladder.in .stage:nth-child(2) .bar{width:57%}
+.ladder.in .stage:nth-child(3) .bar{width:79%}
+.ladder.in .stage:nth-child(4) .bar{width:100%}
+.funnel.in .stage:nth-child(1) .bar{width:100%}
+.funnel.in .stage:nth-child(2) .bar{width:76%}
+.funnel.in .stage:nth-child(3) .bar{width:52%}
+.funnel.in .stage:nth-child(4) .bar{width:33%}
+@media(max-width:900px){
+  .feature-inner{grid-template-columns:1fr;gap:44px}.fronts{padding:70px 0}
+  .switch{width:100%}
+  .switch button{flex:1;justify-content:center;padding:13px 8px;font-size:14px;gap:8px;
+    white-space:normal;text-align:center;line-height:1.25}
+  .switch button .dot{width:8px;height:8px}
+}
+
+/* ---------- serviços ---------- */
+.services{padding:100px 0}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}
+.services-head p{color:#9FB0C2;max-width:40ch;margin:0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{position:relative;overflow:hidden;padding:30px 26px 32px;border-radius:20px;
+  background:rgba(255,255,255,.028);border:1px solid var(--line);
+  transition:transform .3s,border-color .3s,background .3s}
+.card::before{content:"";position:absolute;right:-70px;top:-70px;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(43,127,255,.35),transparent 66%);
+  opacity:0;transition:opacity .35s}
+.card:hover{transform:translateY(-5px);border-color:rgba(127,216,255,.4);background:rgba(43,127,255,.055)}
+.card:hover::before{opacity:1}
+.card.front{grid-column:span 2;--acc:var(--signal);
+  background:linear-gradient(140deg,rgba(127,216,255,.10),rgba(255,255,255,.028) 60%);
+  border-color:rgba(127,216,255,.34)}
+.card.front[data-front="pago"]{--acc:var(--blue);
+  background:linear-gradient(140deg,rgba(43,127,255,.13),rgba(255,255,255,.028) 60%);
+  border-color:rgba(43,127,255,.38)}
+.card.front .ico{color:var(--acc)}
+.card.front h3{font-size:24px;margin-bottom:6px}
+.card.front .kick{position:relative;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--acc);margin:0 0 12px}
+.card.front .go{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-size:14.5px;font-weight:600;color:var(--acc)}
+.card.front .go svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;
+  transition:transform .3s}
+.card.front:hover .go svg{transform:translateX(4px)}
+.card.front{cursor:pointer}
+@media(max-width:1000px){.card.front{grid-column:span 2}}
+@media(max-width:600px){.card.front{grid-column:span 1}}
+.card .ico{position:relative;width:40px;height:40px;margin-bottom:20px;color:var(--blue)}
+.card .ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.card:hover .ico{color:var(--signal)}
+.card h3{position:relative;font-family:var(--display);font-weight:600;font-size:19px;
+  letter-spacing:-.02em;line-height:1.2;margin:0 0 10px}
+.card p{position:relative;font-size:14.5px;line-height:1.55;color:#93A5B8;margin:0}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}
+  .services-head{flex-direction:column;align-items:flex-start;gap:16px}.services{padding:70px 0}}
+
+/* ---------- brief aberto ---------- */
+.brief{padding:20px 0 100px}
+.brief-box{border-radius:26px;padding:clamp(30px,4.6vw,58px);text-align:center;
+  background:linear-gradient(160deg,rgba(43,127,255,.13),rgba(10,27,51,.55));
+  border:1px dashed rgba(127,216,255,.35)}
+.brief-box h2{max-width:16ch;margin-inline:auto}
+.brief-box p{color:#B9C7D6;max-width:52ch;margin:0 auto 30px}
+.ask{display:flex;gap:10px;max-width:620px;margin:0 auto;flex-wrap:wrap}
+.ask input{flex:1 1 320px;background:rgba(5,12,22,.7);border:1px solid var(--line);color:var(--paper);
+  font-family:var(--body);font-size:15.5px;padding:15px 20px;border-radius:100px;outline:none;
+  transition:border-color .25s,box-shadow .25s}
+.ask input::placeholder{color:#6E8095}
+.ask input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(43,127,255,.16)}
+.hint{font-family:var(--mono);font-size:12.5px;color:var(--steel);margin-top:18px}
+
+/* ---------- contato ---------- */
+.contact{padding:0 0 100px}
+.contact-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:44px}
+.ccard{grid-column:span 2}
+.ccard:nth-child(4),.ccard:nth-child(5){grid-column:span 3}
+.ccard{display:flex;flex-direction:column;gap:6px;padding:30px 28px;border-radius:20px;
+  border:1px solid var(--line);background:rgba(255,255,255,.028);transition:all .3s}
+.ccard:hover{border-color:var(--blue);background:rgba(43,127,255,.07);transform:translateY(-4px)}
+.ccard span{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--steel)}
+.ccard strong{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.1vw,23px);
+  letter-spacing:-.02em;word-break:break-word}
+.ccard em{font-style:normal;font-size:14px;color:#8FA2B6}
+@media(max-width:1000px){.contact-grid{grid-template-columns:repeat(2,1fr)}
+  .ccard,.ccard:nth-child(4),.ccard:nth-child(5){grid-column:span 1}
+  .ccard:nth-child(5){grid-column:span 2}}
+@media(max-width:640px){.contact-grid{grid-template-columns:1fr}
+  .ccard,.ccard:nth-child(4),.ccard:nth-child(5){grid-column:span 1}}
+
+/* ---------- rodapé ---------- */
+footer{border-top:1px solid var(--line);padding:38px 0 46px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .mark{font-size:26px}
+.foot p{margin:0;font-family:var(--mono);font-size:12.5px;color:var(--steel)}
+
+/* ---------- botão flutuante ---------- */
+.float{position:fixed;right:20px;bottom:20px;z-index:70;opacity:0;transform:translateY(20px);
+  pointer-events:none;transition:opacity .35s,transform .35s}
+.float.show{opacity:1;transform:none;pointer-events:auto}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+.d7{transition-delay:.56s}.d8{transition-delay:.64s}
+
+/* ---------- faixa de quebra ---------- */
+.ticker{position:relative;overflow:hidden;padding:clamp(20px,3vw,30px) 0;
+  border-block:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(43,127,255,.08),transparent 45%,rgba(43,127,255,.08))}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;width:14%;height:100%;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.ticker::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.ticker-track{display:flex;align-items:center;width:max-content;animation:slide 30s linear infinite}
+.ticker-track span{display:inline-flex;align-items:center;gap:clamp(18px,3vw,34px);
+  font-family:var(--display);font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(24px,3.4vw,42px);white-space:nowrap;padding-right:clamp(18px,3vw,34px)}
+.ticker-track span b{font-weight:800;color:var(--paper)}
+.ticker-track span i{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(132,150,172,.6)}
+.ticker-dot{width:9px;height:9px;border-radius:50%;background:var(--blue);flex:none;
+  box-shadow:0 0 14px rgba(43,127,255,.9)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .chip{opacity:1}
+  .ticker-track{animation:none;justify-content:center;width:100%}
+  .ph-grid span,.chip-f,.res,.msg,.cursor{opacity:1!important;transform:none!important}
+  .q{width:58%!important}
+}
+</style>
+</head>
+<body>
+
+<a class="btn btn-primary float" id="float" href="https://wa.me/5527981534842?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MGL%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#topo" class="mark">mgl<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 24 A7 7 0 0 0 0 17"/><path d="M13 24 A13 13 0 0 0 0 11"/><path d="M19 24 A19 19 0 0 0 0 5"/>
+    </svg></a>
+    <nav>
+      <a href="#frentes">As duas frentes</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/5527981534842?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MGL%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">MGL Soluções Digitais</p>
+      <h1 class="reveal d1">O seu dinheiro está com <em>clientes que ainda não te conhecem.</em></h1>
+      <p class="lead reveal d2">Enquanto você lê isso, tem gente procurando no Google e passando o dedo no Instagram atrás do que você vende — e encontrando outro nome. A MGL coloca o seu negócio na frente dessas pessoas e transforma o clique em conversa no WhatsApp.</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary" href="https://wa.me/5527981534842?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MGL%20e%20quero%20come%C3%A7ar%20a%20aparecer." target="_blank" rel="noopener">Quero ser encontrado</a>
+        <a class="btn btn-ghost" href="#frentes">Ver as duas frentes</a>
+      </div>
+      <p class="slogan reveal d4">Mais visibilidade, mais buscas, mais vendas.</p>
+    </div>
+
+    <div class="radar reveal d3" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle class="ring" cx="200" cy="200" r="196"/>
+        <circle class="ring" cx="200" cy="200" r="196"/>
+        <circle class="ring" cx="200" cy="200" r="196"/>
+        <circle class="ring" cx="200" cy="200" r="196"/>
+      </svg>
+      <div class="core"><span class="mark">mgl<svg viewBox="0 0 24 24">
+        <path d="M7 24 A7 7 0 0 0 0 17"/><path d="M13 24 A13 13 0 0 0 0 11"/><path d="M19 24 A19 19 0 0 0 0 5"/>
+      </svg></span></div>
+      <div class="chip c1">pizzaria que entrega aqui perto</div>
+      <div class="chip c2">advogado de família</div>
+      <div class="chip c3">conserto de celular perto de mim</div>
+      <div class="chip c4">chopp para festa</div>
+      <div class="searchbar">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span id="typed"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEBRA: SLOGAN -->
+<div class="ticker" aria-label="Mais visibilidade, mais buscas, mais vendas">
+  <div class="ticker-track">
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+    <span><b>mais visibilidade</b><em class="ticker-dot"></em><i>mais buscas</i><em class="ticker-dot"></em><b>mais vendas</b><em class="ticker-dot"></em></span>
+  </div>
+</div>
+
+<!-- DUAS FRENTES -->
+<section class="fronts" id="frentes">
+  <div class="wrap">
+    <div class="fronts-head reveal">
+      <p class="sec-label">Duas frentes</p>
+      <h2>Ser encontrado hoje.<br>Ser lembrado sempre.</h2>
+      <p class="note">Uma frente acelera, a outra sustenta. Veja cada uma por dentro e escolha por onde começar — ou use as duas, que é o que mais dá resultado.</p>
+    </div>
+
+    <div class="switch reveal d1" id="switch" role="tablist" aria-label="Frentes de trabalho">
+      <span class="pill" aria-hidden="true"></span>
+      <button role="tab" aria-selected="true" aria-controls="p-organico" id="t-organico">
+        <span class="dot"></span>Posicionamento digital</button>
+      <button role="tab" aria-selected="false" aria-controls="p-pago" id="t-pago">
+        <span class="dot"></span>Gestão de anúncios</button>
+    </div>
+
+    <!-- FRENTE 1: ORGANICO -->
+    <div class="panel on" data-front="organico" id="p-organico" role="tabpanel" aria-labelledby="t-organico">
+      <div class="feature-card">
+        <div class="feature-inner">
+          <div>
+            <h2>Posicionamento digital<em>tráfego orgânico</em></h2>
+            <p>Hoje o perfil nas redes é a vitrine e o currículo de qualquer negócio: é ali que a pessoa decide se confia em você antes mesmo de mandar a primeira mensagem. O tráfego orgânico é esse trabalho de construção — conteúdo com constância, linha editorial, gravações e roteiros que colocam a sua marca como referência no que ela faz. Posicionamento e autoridade erguidos passo a passo, que continuam rendendo depois.</p>
+            <div class="tags">
+              <span class="tag">Social media</span>
+              <span class="tag">Roteirização de conteúdo</span>
+              <span class="tag">Gravações</span>
+              <span class="tag">Cobertura de eventos</span>
+              <span class="tag">Direção de cursos e campanhas</span>
+              <span class="tag">Linha editorial</span>
+              <span class="tag">Calendário de postagens</span>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/5527981534842?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20tr%C3%A1fego%20org%C3%A2nico%20e%20posicionamento%20digital%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Construir meu posicionamento</a>
+          </div>
+          <div class="viz">
+          <div class="scene" aria-hidden="true">
+            <div class="phone">
+              <div class="ph-top"><span class="ava"></span>
+                <span class="lns"><i></i><i></i></span></div>
+              <div class="ph-grid">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="chip-f f1">novo conteúdo no ar</div>
+            <div class="chip-f f2">perfil visitado</div>
+            <div class="chip-f f3">salvou e compartilhou</div>
+          </div>
+          <div class="chart ladder">
+            <div class="stage">
+              <div class="lbl"><b>Mês 01</b><span>Conteúdo saindo com constância</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Mês 02</b><span>O perfil vira sua vitrine</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Mês 03</b><span>Sua marca vira referência</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Daí em diante</b><span>Cliente chega te conhecendo</span></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRENTE 2: PAGO -->
+    <div class="panel" data-front="pago" id="p-pago" role="tabpanel" aria-labelledby="t-pago">
+      <div class="feature-card">
+        <div class="feature-inner">
+          <div>
+            <h2>Gestão de anúncios<em>tráfego pago</em></h2>
+            <p>Aparecer para todo mundo é caro e inútil. A gente anuncia para quem já está procurando: pessoas da sua região, no momento da decisão, com a mensagem certa. Campanha, criativo, segmentação e acompanhamento — feito e ajustado toda semana.</p>
+            <div class="tags">
+              <span class="tag">Google Ads</span>
+              <span class="tag">Meta Ads</span>
+              <span class="tag">Segmentação por região</span>
+              <span class="tag">Criativos e textos</span>
+              <span class="tag">Relatório mensal</span>
+              <span class="tag">Ajuste semanal</span>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/5527981534842?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20tr%C3%A1fego%20pago%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Começar a anunciar</a>
+          </div>
+          <div class="viz">
+          <div class="scene" aria-hidden="true">
+            <div class="srch"><span class="mag"></span><span class="q"></span></div>
+            <div class="res ad"><span class="tagad">Anúncio</span><i></i><i></i></div>
+            <div class="res org"><i></i><i></i></div>
+            <div class="cursor"></div>
+            <div class="msg">Oi! Vi seu anúncio…</div>
+          </div>
+          <div class="chart funnel">
+            <div class="stage">
+              <div class="lbl"><b>Etapa 01</b><span>Pessoas buscando o seu serviço</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Etapa 02</b><span>Veem o seu anúncio</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Etapa 03</b><span>Clicam e conhecem você</span></div>
+              <div class="bar"></div>
+            </div>
+            <div class="stage">
+              <div class="lbl"><b>Etapa 04</b><span>Chamam no WhatsApp</span></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="solucoes">
+  <div class="wrap">
+    <div class="services-head reveal">
+      <div>
+        <p class="sec-label">O que sustenta as duas frentes</p>
+        <h2>As frentes trazem gente.<br>O resto faz essa gente confiar.</h2>
+      </div>
+      <p>Cada peça abaixo funciona sozinha — e funciona muito melhor junto com o orgânico e o pago.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card front reveal" data-front="organico" tabindex="0" role="link">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M5 27V14l11-8 11 8v13"/><path d="M11 27v-9h10v9"/></svg></div>
+        <p class="kick">Frente 01 · tráfego orgânico</p>
+        <h3>Posicionamento digital</h3>
+        <p>Social media, conteúdo e autoridade. O perfil vira a vitrine e o currículo da sua marca.</p>
+        <span class="go">Ver a frente <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="card front reveal d1" data-front="pago" tabindex="0" role="link">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M6 12h6l9-6v20l-9-6H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z"/><path d="M25 12.5a6 6 0 0 1 0 7"/></svg></div>
+        <p class="kick">Frente 02 · tráfego pago</p>
+        <h3>Gestão de anúncios</h3>
+        <p>Campanhas no Google e no Meta para aparecer na hora em que estão procurando você.</p>
+        <span class="go">Ver a frente <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="6"/><circle cx="16" cy="16" r="5.5"/><circle cx="23" cy="9" r="1.6"/></svg></div>
+        <h3>Social media</h3>
+        <p>Linha editorial, artes e legendas publicadas com constância — o perfil deixa de ficar parado.</p>
+      </article>
+
+      <article class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="3" y="8" width="18" height="16" rx="3"/><path d="M21 15l7-4v10l-7-4z"/></svg></div>
+        <h3>Gravação e roteirização</h3>
+        <p>Do roteiro à captação: a gente escreve, grava e dirige para você não travar na frente da câmera.</p>
+      </article>
+
+      <article class="card reveal d3">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M6 27V12l10-6 10 6v15"/><path d="M12 27v-8h8v8"/><circle cx="16" cy="12.5" r="2"/></svg></div>
+        <h3>Cobertura de eventos</h3>
+        <p>Registro de palestras, inaugurações e encontros — material que vira conteúdo pelos meses seguintes.</p>
+      </article>
+
+      <article class="card reveal d4">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M4 9.5 16 4l12 5.5L16 15 4 9.5Z"/><path d="M9 12.5V20c0 2.2 3.1 4 7 4s7-1.8 7-4v-7.5"/><path d="M27 10.5V18"/></svg></div>
+        <h3>Cursos e campanhas</h3>
+        <p>Direção e gravação de cursos, mentorias e campanhas — da estrutura das aulas à entrega final.</p>
+      </article>
+
+      <article class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="3" y="6" width="26" height="20" rx="3"/><path d="M3 12h26M7.5 9h.01M11 9h.01"/></svg></div>
+        <h3>Sites e landing pages</h3>
+        <p>Uma página feita para uma coisa só: fazer quem entrou entrar em contato com você.</p>
+      </article>
+
+      <article class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M16 29s10-9.2 10-16a10 10 0 1 0-20 0c0 6.8 10 16 10 16Z"/><circle cx="16" cy="13" r="3.6"/></svg></div>
+        <h3>Google Business Profile</h3>
+        <p>Estruturação e manutenção do seu perfil no Google e no Maps: fotos, posts, horários e avaliações.</p>
+      </article>
+
+      <article class="card reveal d3">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="10" height="10" rx="2.5"/><rect x="18" y="4" width="10" height="10" rx="2.5"/><rect x="4" y="18" width="10" height="10" rx="2.5"/><path d="M23 17v12M17 23h12"/></svg></div>
+        <h3>Aplicativos e diretórios</h3>
+        <p>Seu negócio cadastrado onde as pessoas procuram: mapas, apps, guias locais e diretórios do setor.</p>
+      </article>
+
+      <article class="card reveal d4">
+        <div class="ico"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="4"/><path d="M16 3v5M16 24v5M3 16h5M24 16h5M7 7l3.5 3.5M21.5 21.5 25 25M25 7l-3.5 3.5M10.5 21.5 7 25"/></svg></div>
+        <h3>Ferramentas Google</h3>
+        <p>E-mail profissional, Drive organizado, Agenda, Formulários e Analytics configurados do jeito certo.</p>
+      </article>
+
+      <article class="card reveal d5">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="5" y="3" width="22" height="26" rx="3"/><path d="M10 10h12M10 16h12M10 22h7"/></svg></div>
+        <h3>Catálogos digitais</h3>
+        <p>Cardápio ou catálogo em QR code, com preços e itens que você mesmo atualiza a qualquer hora.</p>
+      </article>
+
+      <article class="card reveal d6">
+        <div class="ico"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="22" rx="3"/><path d="M3 12h26M12 12v15M21 12v15"/></svg></div>
+        <h3>Planilhas organizacionais</h3>
+        <p>Controle de vendas, clientes, estoque e caixa em planilhas simples de usar no dia a dia.</p>
+      </article>
+
+      <article class="card reveal d7">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M4 26V9a2 2 0 0 1 2-2h7l2.5 3H26a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M11 19l3.5-4 3 3.5L21 14"/></svg></div>
+        <h3>Consultoria comercial</h3>
+        <p>Atendimento, script, follow-up e fechamento: o que fazer depois que o cliente aparece.</p>
+      </article>
+
+      <article class="card reveal d8">
+        <div class="ico"><svg viewBox="0 0 32 32"><path d="M16 3c-4.4 0-8 3.4-8 7.6 0 3 1.7 4.9 2.9 6.4.9 1.1 1.1 1.6 1.1 2.8v.7h8v-.7c0-1.2.2-1.7 1.1-2.8 1.2-1.5 2.9-3.4 2.9-6.4C24 6.4 20.4 3 16 3Z"/><path d="M13 24.5h6M14 28h4"/></svg></div>
+        <h3>Serviços e inovações digitais</h3>
+        <p>Cursos, vídeos, mentorias e eventos online estruturados da ideia até a publicação.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BRIEF ABERTO -->
+<section class="brief">
+  <div class="wrap">
+    <div class="brief-box reveal">
+      <p class="sec-label">Nenhum negócio é igual ao outro</p>
+      <h2>Não achou o que você procura?</h2>
+      <p>Escreva em uma linha o que está precisando. A gente conversa, entende o problema de verdade e monta a solução — mesmo que ela não esteja nessa página.</p>
+      <div class="ask">
+        <input id="need" type="text" placeholder="Ex.: preciso organizar os pedidos do meu delivery" aria-label="O que você está buscando">
+        <button class="btn btn-primary" id="send">Explicar para quem entende</button>
+      </div>
+      <p class="hint">Sua mensagem abre já escrita no WhatsApp. Resposta no mesmo dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <p class="sec-label reveal">Contato direto</p>
+    <h2 class="reveal d1">Fale com a gente.<br>Sem formulário sem fim.</h2>
+    <div class="contact-grid">
+      <a class="ccard reveal d2" href="https://wa.me/5527981534842?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MGL." target="_blank" rel="noopener">
+        <span>WhatsApp</span><strong>27 98153-4842</strong><em>Orçamentos e novos projetos</em>
+      </a>
+      <a class="ccard reveal d3" href="https://wa.me/5527999327084?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MGL." target="_blank" rel="noopener">
+        <span>WhatsApp</span><strong>27 99932-7084</strong><em>Atendimento e suporte</em>
+      </a>
+      <a class="ccard reveal d4" href="https://instagram.com/mglsolucoesdigitais" target="_blank" rel="noopener">
+        <span>Instagram</span><strong>@mglsolucoesdigitais</strong><em>Bastidores e resultados</em>
+      </a>
+      <a class="ccard reveal d5" href="mailto:contato@mglsolucoesdigitais.com">
+        <span>E-mail</span><strong>contato@mglsolucoesdigitais.com</strong><em>Propostas e contratos</em>
+      </a>
+      <a class="ccard reveal d6" href="mailto:mglsolucoesdigitais@gmail.com">
+        <span>E-mail</span><strong>mglsolucoesdigitais@gmail.com</strong><em>Arquivos e documentos</em>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#topo" class="mark">mgl<svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 24 A7 7 0 0 0 0 17"/><path d="M13 24 A13 13 0 0 0 0 11"/><path d="M19 24 A19 19 0 0 0 0 5"/>
+    </svg></a>
+    <p>Mais visibilidade, mais buscas, mais vendas.</p>
+    <p>© 2026 MGL Soluções Digitais</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* header + botão flutuante */
+  var header = document.getElementById('header'), float = document.getElementById('float');
+  function onScroll(){
+    var y = window.scrollY;
+    header.classList.toggle('stuck', y > 30);
+    float.classList.toggle('show', y > 620);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* reveal + funil */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.16, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal, .chart').forEach(function(el){ io.observe(el); });
+
+  /* alternancia entre as duas frentes */
+  var sw = document.getElementById('switch');
+  if(sw){
+    var tabs = [].slice.call(sw.querySelectorAll('button'));
+    var pill = sw.querySelector('.pill');
+    var panels = [].slice.call(document.querySelectorAll('.panel'));
+    var current = 0;
+
+    function movePill(i){
+      var b = tabs[i];
+      pill.style.width = b.offsetWidth + 'px';
+      pill.style.transform = 'translateX(' + b.offsetLeft + 'px)';
+      sw.setAttribute('data-active', i);
+    }
+    function activate(i, focus){
+      current = i;
+      tabs.forEach(function(b, k){ b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      panels.forEach(function(p, k){ p.classList.toggle('on', k === i); });
+      movePill(i);
+      if(focus) tabs[i].focus();
+      var ch = panels[i].querySelector('.chart');
+      if(ch){
+        ch.classList.remove('in');
+        void ch.offsetWidth;
+        requestAnimationFrame(function(){ ch.classList.add('in'); });
+      }
+    }
+    tabs.forEach(function(b, i){
+      b.addEventListener('click', function(){ if(i !== current) activate(i); });
+      b.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowRight') activate((current + 1) % tabs.length, true);
+        if(e.key === 'ArrowLeft')  activate((current + tabs.length - 1) % tabs.length, true);
+      });
+    });
+    document.querySelectorAll('.card.front').forEach(function(c){
+      function open(){
+        activate(c.dataset.front === 'pago' ? 1 : 0);
+        document.getElementById('frentes').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+      }
+      c.addEventListener('click', open);
+      c.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
+      });
+    });
+    window.addEventListener('resize', function(){ movePill(current); });
+    activate(0);
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){ movePill(current); });
+    }
+  }
+
+  /* busca digitando */
+  var queries = [
+    'advogado de fam\u00edlia perto de mim',
+    'assist\u00eancia t\u00e9cnica de celular',
+    'onde comprar chopp para festa',
+    'cl\u00ednica de est\u00e9tica aberta agora',
+    'quem faz site para pequena empresa'
+  ];
+  var out = document.getElementById('typed');
+  if(reduce){ out.textContent = queries[0]; }
+  else {
+    var qi = 0, ci = 0, del = false;
+    (function tick(){
+      var q = queries[qi];
+      ci += del ? -1 : 1;
+      out.textContent = q.slice(0, ci);
+      var wait = del ? 34 : 72;
+      if(!del && ci === q.length){ del = true; wait = 1900; }
+      else if(del && ci === 0){ del = false; qi = (qi+1) % queries.length; wait = 320; }
+      setTimeout(tick, wait);
+    })();
+  }
+
+  /* brief aberto -> WhatsApp */
+  var need = document.getElementById('need'), send = document.getElementById('send');
+  function go(){
+    var txt = need.value.trim();
+    var msg = txt
+      ? 'Ol\u00e1! Vim pelo site da MGL. Estou buscando: ' + txt
+      : 'Ol\u00e1! Vim pelo site da MGL e quero explicar o que estou buscando.';
+    window.open('https://wa.me/5527981534842?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  }
+  send.addEventListener('click', go);
+  need.addEventListener('keydown', function(e){ if(e.key === 'Enter') go(); });
+})();
+</script>
+</body>
+</html>
